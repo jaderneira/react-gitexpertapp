@@ -13,6 +13,12 @@ describe('Tests in <GifGridItem />', () => {
     test('should show <GifGridItem /> correctly', () => {
         expect(wrapper).toMatchSnapshot();
     })
+
+    test('should have a paraph with the title', () => {
+        const p = wrapper.find('p');
+        expect( p.text().trim() ).toBe( title );
+    })
+    
     
     
 })
