@@ -18,6 +18,13 @@ describe('Tests in <GifGridItem />', () => {
         const p = wrapper.find('p');
         expect( p.text().trim() ).toBe( title );
     })
+
+    test('should have a img with same url and alt from props', () => {
+        const img = wrapper.find('img');
+        
+        expect( img.prop('src') ).toBe( url );
+        expect( img.prop('alt') ).toBe( title );
+    })
     
     
     
