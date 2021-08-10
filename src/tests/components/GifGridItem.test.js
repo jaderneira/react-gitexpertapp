@@ -25,6 +25,15 @@ describe('Tests in <GifGridItem />', () => {
         expect( img.prop('src') ).toBe( url );
         expect( img.prop('alt') ).toBe( title );
     })
+
+    test('should have the animated_fadeIn class', () => {
+        const div = wrapper.find('div');
+        const className = div.prop('className')
+                
+        expect( className.includes('animate__fadeIn') ).toBe( true );
+    })
+
+
     
     
     
