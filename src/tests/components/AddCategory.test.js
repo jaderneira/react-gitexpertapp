@@ -16,6 +16,8 @@ describe('Tests in <AddCategory />', () => {
         const value = 'Hola mundo'
         
         input.simulate('change', { target: { value } });
+
+        expect( wrapper.find('p').text().trim() ).toBe( value );
         
     })
     
