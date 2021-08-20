@@ -4,7 +4,7 @@ import { AddCategory } from "../../components/AddCategory";
 
 describe('Tests in <AddCategory />', () => {
 
-    const setCategories = () => {}
+    const setCategories = jest.fn();
     const wrapper = shallow(<AddCategory setCategories={ setCategories }/>);
         
     test('should show <AddCategory /> correctly', () => {
@@ -19,6 +19,10 @@ describe('Tests in <AddCategory />', () => {
 
         expect( wrapper.find('p').text().trim() ).toBe( value );
         
+    })
+
+    test('Not should post the submit', () => {
+        wrapper.find('form').simulate('submit', { preventDefault(){} });
     })
     
     
